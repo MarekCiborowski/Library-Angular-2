@@ -7,9 +7,12 @@ import * as data from './data/products.json'
 })
 export class ShopProductsService {
 
-  constructor () { }
-  getData(){
+  data: any[]
 
-    return data;
+  constructor () { this.data = data.products}
+  
+  getData(){
+    return data.products;
   }
+  
 }

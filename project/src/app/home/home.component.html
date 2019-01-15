@@ -1,3 +1,6 @@
-<p>
-  home works!
-</p>
+<h2>Home</h2>
+
+<div class='product-listing' *ngFor="let item of this.ShopProductsService.data">
+{{item.price}}
+
+</div>
