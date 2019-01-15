@@ -8,6 +8,11 @@ import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { YourOrdersComponent } from './your-orders/your-orders.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { CartProductsService} from './cart-products.service';
+import { ShopProductsService} from './shop-products.service';
+import { OrderListService} from './order-list.service'
+import { HttpClientModule } from '@angular/common/http'; 
+
 
 @NgModule({
   declarations: [
@@ -16,13 +21,15 @@ import { NavigationComponent } from './navigation/navigation.component';
     CartComponent,
     OrderComponent,
     YourOrdersComponent,
-    NavigationComponent
+    NavigationComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CartProductsService,ShopProductsService,OrderListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
