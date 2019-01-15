@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CartProductsService {
-  public cart = []
-  constructor() { }
+  cart: any[]
+  constructor() { this.cart=[]}
 
   getCart(){
     return this.cart;
@@ -13,5 +13,15 @@ export class CartProductsService {
 
   updateCart(cart){
     this.cart=cart;
+  }
+
+
+  
+  addToCart(product, cartProduct){
+    console.log(product);
+  }
+
+  getCartProductById(id){
+    this.cart.filter(cartItem => cartItem.id === id)[0]
   }
 }

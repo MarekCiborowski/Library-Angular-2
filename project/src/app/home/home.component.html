@@ -1,6 +1,20 @@
 <h2>Home</h2>
 
-<div class='product-listing' *ngFor="let item of this.ShopProductsService.data">
-{{item.price}}
+<div>
+<div class="product-listing" *ngFor="let product of this.ShopProductsService.data">
+    <div class="productListItem">
+        <div><b>{{product.name}}</b></div>
+        <div><i>{{product.description}}</i></div>
+        <div>${{product.price}}</div>
+        <div>
+            <button (click)="this.CartProductsService.addToCart(product,
+            this.CartProductsService.getCartProductById(product.id) )">Add</button>
 
+            
+                
+            
+        </div>
+    </div>
+
+</div>
 </div>
