@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+.body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -31,6 +32,7 @@ body {
     border-bottom: 3px solid transparent;
     justify-self: center;
     text-decoration: none;
+    cursor: pointer;
   }
   
     .btn-menu:hover {
