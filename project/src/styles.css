@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+  
+  .product-listing{
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  .product-listing .productListItem{
+    padding: 10px 30px;
+    width: 200px;
+  }
+  .btn-menu {
+    color: #b3c6cd;
+    padding: 15px;
+    border-bottom: 3px solid transparent;
+    justify-self: center;
+    text-decoration: none;
+  }
+  
+    .btn-menu:hover {
+        color: #b3c6cd;
+        border-bottom: 3px solid #b3c6cd;
+    }
+    .navbar-header {
+      display: flex;
+      flex-direction: row;
+      justify-items: flex-start;
+      align-items: center;
+  }
+  .container-box {
+    width: 100%;
+    height: 50px;
+    background: #10465e;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+  .main {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    padding: 50px;
+    box-shadow: 0px 10px 45px #10465e;
+    color: #071014;
+  
+    z-index: 10;
+  }
+  .container-main {
+    display: compact;
+    justify-content:inherit;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .body-content {
+    padding-left: 50px;
+    padding-right: 150px;
+  }
+  .form-add-task{
+    display: flex;
+    flex-direction: column;
+    height: 560px;
+    width: 300px;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #123D56;
+    color: #6B8EA3;
+  }
+  
+  .order .details {
+    display: none;
+  }
+  
+  .active .details {
+    display: block
+  }
+  .table-order{
+    background-color:whitesmoke
+  }
+  
+  td{
+    padding: 10px 10px;
+    text-align:center;
+  }

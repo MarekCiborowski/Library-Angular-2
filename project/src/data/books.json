@@ -1,0 +1,36 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Buty",
+        "description": "Bardzo dobre buty",
+        "price": 10.00
+      },
+      {
+        "id": 2,
+        "name": "Lody",
+        "description": "Smak śmietankowy",
+        "price": 10.25
+      },
+      {
+        "id": 3,
+        "name": "Bułki",
+        "description": "Świeże bułki, prosto z piekarni",
+        "price": 19.99
+      },
+  
+      {
+        "id": 4,
+        "name": "Program",
+        "description": "Super program szybki",
+        "price": 12.99
+      },
+      {
+        "id": 5,
+        "name": "Jeszcze jeden",
+        "description": "Produkt testowy bardzo drogi",
+        "price": 99.99
+      }
+    ]
+  }
+  
