@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationService } from '../navigation.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,14 +8,11 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private NavigationService : NavigationService) { }
 
   ngOnInit() {
   }
-  redirect(pagename: string) {
-    console.log(pagename);
-    this.router.navigateByUrl('/'+pagename);
-  }
+  
 
 
 }

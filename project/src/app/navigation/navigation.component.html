@@ -1,7 +1,7 @@
 <div class="container-box"><nav class="navbar-header">
 
-  <div (click)="redirect('')" class="btn-menu">Home</div>
-  <div (click)="redirect('cart')" class="btn-menu">Cart</div>
-  <div (click)="redirect('yourOrders')" class="btn-menu">Your Orders</div>
+  <div (click)="this.NavigationService.redirect('')" class="btn-menu">Home</div>
+  <div (click)="this.NavigationService.redirect('cart')" class="btn-menu">Cart</div>
+  <div (click)="this.NavigationService.redirect('yourOrders')" class="btn-menu">Your Orders</div>
   
 </nav></div>

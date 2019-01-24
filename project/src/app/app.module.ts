@@ -12,6 +12,7 @@ import { CartProductsService} from './cart-products.service';
 import { ShopProductsService} from './shop-products.service';
 import { OrderListService} from './order-list.service'
 import { HttpClientModule } from '@angular/common/http'; 
+import { NavigationService } from './navigation.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CartProductsService,ShopProductsService,OrderListService],
+  providers: [CartProductsService,ShopProductsService,OrderListService,NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,34 @@
-<p>
-  cart works!
-</p>
+<h3 *ngIf="this.CartProductsService.isCartEmpty(); else elseBlock">There are no items in your cart</h3>
+<ng-template #elseBlock>
+  <h3>${{this.CartProductsService.getTotalPrice()}}</h3>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let product of this.CartProductsService.getSortedCart()">
+        
+          <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>
+              
+                <button (click)="this.CartProductsService.addToCart(product)">+</button>
+                <button (click)="this.CartProductsService.removeFromCart(product.id)">-</button>
+                <button (click)="this.CartProductsService.removeAllFromCart(product.id)">Remove from cart</button>
+              
+            </td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  <br/>
+<button (click)="this.NavigationService.redirect('order')">Order</button>
+</ng-template>
+
+

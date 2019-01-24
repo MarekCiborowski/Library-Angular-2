@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class OrderListService {
-  public orders =[]
-  constructor() { }
+  orders: any[]
+  constructor() {this.orders=[] }
 
   getOrders(){
     return this.orders;

@@ -9,7 +9,6 @@ import { CartProductsService } from '../cart-products.service';
 })
 export class HomeComponent implements OnInit {
 
-  products ={};
   constructor(private ShopProductsService : ShopProductsService, private CartProductsService : CartProductsService) { }
 
 
