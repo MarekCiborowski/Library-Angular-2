@@ -44,7 +44,8 @@ get f() { return this.registerForm.controls; }
             email: this.registerForm.value.email,
             phoneNumber: this.registerForm.value.phoneNumber,
             address: this.registerForm.value.address,
-            cart: this.CartProductsService.getCart()
+            cart: this.CartProductsService.getCart(),
+            isChecked: false,
           });
         this.CartProductsService.clearCart();
 

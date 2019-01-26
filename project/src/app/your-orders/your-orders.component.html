@@ -1,7 +1,7 @@
 <h3 *ngIf="this.OrderListService.areOrdersEmpty(); else elseBlock">There are no orders yet</h3>
 <ng-template #elseBlock>
 <h2>Your Orders</h2>
-<div *ngFor="let order of this.OrderListService.getSortedOrders()">
+<div *ngFor="let i = index; let order of this.OrderListService.getSortedOrders()">
 
     <table class="table-order" style="text-align:center">
         <thead>
@@ -28,12 +28,12 @@
               >
                 Delete Order
               </button>
-              <!-- <button class="myButton" (click)="this.YourOrdersComponent.clicked($event)">Click me</button> -->
+              <button class="myButton" (click)="this.OrderListService.clickedButton(i)">Show details</button>
             </td>
           </tr>
         </tbody>
       </table>
-      <table class="details" style="text-align:center">
+      <table *ngIf="this.OrderListService.orders[i].isChecked" class="details" style="text-align:center">
         <thead>
           <tr>
             <th style="text-align:center">Item</th>

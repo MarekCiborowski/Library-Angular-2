@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { checkAndUpdateBinding } from '@angular/core/src/view/util';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,6 @@ import { Injectable } from '@angular/core';
 export class OrderListService {
   orders: any[]
   constructor() {this.orders=[] }
-
 
   getOrders(){
     return this.orders;
@@ -34,7 +34,8 @@ export class OrderListService {
         email: order.email,
         phoneNumber: order.phoneNumber,
         address: order.address,
-        cart: order.cart
+        cart: order.cart,
+        isChecked: false,
       };
       this.orders.push(newItem);
     
@@ -55,7 +56,9 @@ export class OrderListService {
   }
 
   
-
+  clickedButton($index){
+    this.orders[$index].isChecked =! this.orders[$index].isChecked;
+  }
   
 
   areOrdersEmpty(){
