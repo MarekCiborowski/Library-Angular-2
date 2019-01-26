@@ -56,7 +56,7 @@
     </div>
     <br/>
     <h2>Your order</h2>
-    <h3>Total price: ${{this.CartProductsService.getTotalPrice()}}</h3>
+    <h3>Total price: ${{this.CartProductsService.getTotalPrice(this.CartProductsService.getSortedCart())}}</h3>
   <div>
     <table>
       <thead>

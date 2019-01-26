@@ -1,6 +1,6 @@
 <h2>Home</h2>
 
-<h3 *ngIf="!this.CartProductsService.isCartEmpty()">${{this.CartProductsService.getTotalPrice()}}</h3>
+<h3 *ngIf="!this.CartProductsService.isCartEmpty()">${{this.CartProductsService.getTotalPrice(this.CartProductsService.getSortedCart())}}</h3>
 
 <div class="product-listing" *ngFor="let product of this.ShopProductsService.data">
     <div class="productListItem">

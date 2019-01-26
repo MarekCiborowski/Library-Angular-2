@@ -37,7 +37,17 @@ get f() { return this.registerForm.controls; }
             return;
         }
 
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+        this.OrderListService.addToOrders(
+          {
+            firstName:this.registerForm.value.firstName,
+            lastName: this.registerForm.value.lastName,
+            email: this.registerForm.value.email,
+            phoneNumber: this.registerForm.value.phoneNumber,
+            address: this.registerForm.value.address,
+            cart: this.CartProductsService.getCart()
+          });
+        this.CartProductsService.clearCart();
+
     }
 
 }

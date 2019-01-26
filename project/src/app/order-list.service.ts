@@ -30,12 +30,13 @@ export class OrderListService {
       var newItem = {
         id:newIndex,
         firstName:order.firstName,
-        lastName: order.surname,
+        lastName: order.lastName,
         email: order.email,
         phoneNumber: order.phoneNumber,
         address: order.address,
         cart: order.cart
       };
+      console.log(newItem);
       this.orders.push(newItem);
     
   }

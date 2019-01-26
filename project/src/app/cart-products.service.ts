@@ -68,9 +68,13 @@ export class CartProductsService {
     this.cart=cartWithoutItem;
   }
 
-  getTotalPrice(){
+  clearCart(){
+    this.cart=[];
+  }
+
+  getTotalPrice(cart){
     var p = 0.00;
-    this.cart.forEach(element => {
+    cart.forEach(element => {
         p += parseFloat(element.price) * parseInt(element.quantity);
     });
     return p.toFixed(2);

@@ -1,3 +1,62 @@
-<p>
-  your-orders works!
-</p>
+<h3 *ngIf="this.OrderListService.areOrdersEmpty(); else elseBlock">There are no items in your cart</h3>
+<ng-template #elseBlock>
+<div *ngFor="let order of this.OrderListService.getSortedOrders()">
+
+    <table class="table-order">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{order.firstName}}</td>
+            <td>{{order.lastName}}</td>
+            <td>{{order.email}}</td>
+            <td>{{order.phoneNumber}}</td>
+            <td>{{order.address}}</td>
+            <td>
+              <button
+                (click)= "this.OrderListService.removeFromOrders(order.id)"
+                  
+              >
+                Delete Order
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table className="details">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody >
+          <div *ngFor = "let product of order.cart">
+            <tr>
+              <td>{{product.name}}</td>
+              <td>{{product.quantity}}</td>
+            </tr>
+          </div>
+         
+          
+            <tr>
+              <td>
+                 <h3>Total price: {{this.CartProductsService.getTotalPrice(order.cart)}}</h3>
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+
+
+</ng-template>
