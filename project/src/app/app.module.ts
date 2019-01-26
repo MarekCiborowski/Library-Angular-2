@@ -13,6 +13,7 @@ import { ShopProductsService} from './shop-products.service';
 import { OrderListService} from './order-list.service'
 import { HttpClientModule } from '@angular/common/http'; 
 import { NavigationService } from './navigation.service';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,12 +24,15 @@ import { NavigationService } from './navigation.service';
     OrderComponent,
     YourOrdersComponent,
     NavigationComponent,
-
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [CartProductsService,ShopProductsService,OrderListService,NavigationService],
   bootstrap: [AppComponent]
