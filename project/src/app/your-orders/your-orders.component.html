@@ -3,7 +3,7 @@
 <h2>Your Orders</h2>
 <div *ngFor="let order of this.OrderListService.getSortedOrders()">
 
-    <table class="table-order">
+    <table class="table-order" style="text-align:center">
         <thead>
           <tr>
             <th>Name</th>
@@ -32,21 +32,18 @@
           </tr>
         </tbody>
       </table>
-      <table class="details">
+      <table class="details" style="text-align:center">
         <thead>
           <tr>
-            <th>Item</th>
+            <th style="text-align:center">Item</th>
             <th>Quantity</th>
           </tr>
         </thead>
-        <tbody >
-          <div *ngFor = "let product of order.cart">
-            <tr>
+        <tbody>
+            <tr *ngFor = "let product of order.cart">
               <td>{{product.name}}</td>
               <td>{{product.quantity}}</td>
             </tr>
-          </div>
-         
           
             <tr>
               <td>
