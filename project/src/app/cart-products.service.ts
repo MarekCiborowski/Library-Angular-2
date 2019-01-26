@@ -41,9 +41,9 @@ export class CartProductsService {
   }
 
   getCartProductById(id){
-    var xd = this.cart.filter(cartItem => cartItem.id === id)[0]
-    console.log(xd)
-    return xd
+    var item= this.cart.filter(cartItem => cartItem.id === id)[0]
+
+    return item;
   }
   removeFromCart(id){
     var currentProduct = this.getCartProductById(id);
