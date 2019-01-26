@@ -15,4 +15,8 @@ export class YourOrdersComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+  // clicked(event) {
+  //   event.target.classList.toggle('myButton'); // To toggle
+  // }
 }
