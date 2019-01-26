@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CartProductsService } from '../cart-products.service';
 import { OrderListService } from '../order-list.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { phoneNumberValidator } from '../validators/phone-validator';
+import { charValidator } from '../validators/char-validator';
 
 @Component({
   selector: 'app-order',
@@ -11,8 +13,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class OrderComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
-  charRegex = /^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]+$/;
-  numRegex = /^\d{9}$/;
 
   constructor( private CartProductsService : CartProductsService, private OrderListService : OrderListService,
     private formBuilder: FormBuilder  ) { }
@@ -20,10 +20,10 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
 
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required,Validators.pattern(this.charRegex)],
-      lastName: ['', Validators.required,Validators.pattern(this.charRegex)],
+      firstName: ['', [Validators.required,charValidator]],
+      lastName: ['', [Validators.required,charValidator]],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required, Validators.pattern(this.numRegex)]],
+      phoneNumber: ['', [Validators.required,phoneNumberValidator]],
       address: ['', Validators.required]
   });
 }
