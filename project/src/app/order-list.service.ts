@@ -36,7 +36,6 @@ export class OrderListService {
         address: order.address,
         cart: order.cart
       };
-      console.log(newItem);
       this.orders.push(newItem);
     
   }
@@ -45,8 +44,14 @@ export class OrderListService {
 
   
   removeFromOrders(id){
-    const ordersWithoutItem = this.orders.filter(orderItem => orderItem.id !== id)
+    if (
+      window.confirm(
+        "Are you sure you wish to delete this order?"
+      )
+    ){
+    var ordersWithoutItem = this.orders.filter(orderItem => orderItem.id !== id)
     this.orders=ordersWithoutItem;
+    }
   }
 
   

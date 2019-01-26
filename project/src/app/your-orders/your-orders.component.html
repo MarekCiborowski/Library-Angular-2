@@ -1,5 +1,6 @@
-<h3 *ngIf="this.OrderListService.areOrdersEmpty(); else elseBlock">There are no items in your cart</h3>
+<h3 *ngIf="this.OrderListService.areOrdersEmpty(); else elseBlock">There are no orders yet</h3>
 <ng-template #elseBlock>
+<h2>Your Orders</h2>
 <div *ngFor="let order of this.OrderListService.getSortedOrders()">
 
     <table class="table-order">
@@ -31,7 +32,7 @@
           </tr>
         </tbody>
       </table>
-      <table className="details">
+      <table class="details">
         <thead>
           <tr>
             <th>Item</th>
