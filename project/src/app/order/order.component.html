@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <h3>Order</h3>
+                    <h3>Enter data for shipment</h3>
                     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <div class="form-group">
                             <label>First name</label>
@@ -54,5 +54,26 @@
             </div>
         </div>
     </div>
+    <br/>
+    <h2>Your order</h2>
+    <h3>Total price: ${{this.CartProductsService.getTotalPrice()}}</h3>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let product of this.CartProductsService.getSortedCart()">
+        
+          <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
 
 </ng-template>
